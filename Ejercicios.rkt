@@ -1,14 +1,27 @@
 #lang racket
 
-(define (average a b c)
-  (/ (+ a b c) 3)
- )
+#|
+ Hacer una función que reciba una temperatura y diga
+ si hace frio, calor o esta templado
+|#
+(define (temp t)
+  (cond
+    [(>= t 30) "Calor"]
+    [(and (>= t 17)(< t 30)) "Templado"]
+    [(< t 17) "Frio"]
+    )
+)
 
 #|
  Hacer una función que reciba 3 calificaciones y nos
- regrese un stringdiciendo  “aprobado” o “reprobado”,
+ regrese un string diciendo  “aprobado” o “reprobado”,
  de acuerdo a su promedio (< 70, reprobado).
 |#
+;Nota apoyate de la función 'average'
+
+(define (average a b c)
+  (/ (+ a b c) 3)
+ )
 
 (define (calificaciones a b c)
   (if(>= (average a b c) 70)
@@ -74,12 +87,17 @@
   )
 )
 
-(define (dummyFunc a)
-  (if (= (maxNumberOfList a) (car a))
-      (cdr a)
-      (if )
-  )
-)
+#|
+ Usando Let
+|#
+
+(define (spam)
+  (let ([a 4]
+        [b 3]
+        )
+    (+ a b)
+))
+
   
   
   
