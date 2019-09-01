@@ -97,8 +97,15 @@
         )
     (+ a b)
 ))
+#|Usando NOT|#
+(define (notFunc n)
+  (if (not(= n 6))
+      "Distinto de 6"
+      "Igual a 6"
+    )
+ )
 
-  
-  
+
+
   
  
