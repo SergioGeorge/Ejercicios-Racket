@@ -33,7 +33,9 @@
  
 )
 (define (buildDate d m y)
-   (list d m y)
+   (fprintf (current-output-port)
+           "~a ~a ~a"
+           d m y)
   )
 
 (define (incrementMonth m y)
