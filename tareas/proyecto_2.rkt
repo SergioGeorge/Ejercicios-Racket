@@ -60,3 +60,22 @@ Cuenta vocales: la función recibe una lista de caracteres y regresa el número 
 (palindromo '(a a b c b a a))
 (palindromo '(a a b c c b a a))
 (palindromo '(a a b c x t c b a a))
+
+
+(define (vocales lista)
+  (if (null? lista)
+      0
+      (case (car lista)
+        ['a (+ (vocales (cdr lista)) 1)]
+        ['e (+ (vocales (cdr lista)) 1)]
+        ['i (+ (vocales (cdr lista)) 1)]
+        ['o (+ (vocales (cdr lista)) 1)]
+        ['u (+ (vocales (cdr lista)) 1)]
+        [else (vocales (cdr lista))]
+       )
+  )
+)
+
+(vocales '(a e i % o ? 4 5 u a o))
+(vocales '(a e i % o ? 4 5 u g r i t a o))
+(vocales '(1 a 2 b c % e 4 u))
