@@ -39,16 +39,24 @@ Cuenta vocales: la función recibe una lista de caracteres y regresa el número 
    
 )
 
-(reverse-multiple '(5 (12 78 34) 23 67 3 (7 9 8)))
+;(reverse-multiple '(5 (12 78 34) 23 67 3 (7 9 8)))
 
 (define l '(5 (3 4) 7)
   )
 
-(list? '())
+;(list? '())
 
-(if (list? (car l))
-    "Es lista"
-    "No es lista"
+
+(define (palindromo lista)
+  (if (or (null? lista) (<= (length lista) 1) )
+      #t
+      (if (equal? (car lista) (car(reverse (cdr lista))))
+          (palindromo (cdr(reverse (cdr lista) )) )
+          #f
+      )
+   )
 )
 
-(car (cdr l))
+(palindromo '(a a b c b a a))
+(palindromo '(a a b c c b a a))
+(palindromo '(a a b c x t c b a a))
